@@ -1,6 +1,6 @@
 # Business Data Analysis with Python
 
-##About The Project
+## About The Project
 **This project is centered on reviewing and analyzing businesses. It showcases a multiplicity of different data analysis 
 methods and techniques learned whilst undertaking my course, 'Data Analysis with Python', offered online by the University of 
 Pennsylvania. Further, it utilizes a variety of popular Python libraries for data analysis such as pandas and matplotlib.**
@@ -51,9 +51,9 @@ hand renders the code executable, which thereby allows you to both view the proj
 <br>
 <br>
 ***To view the project only, click on the following link:*** <br>
-https://somelink
+https://nbviewer.org/github/Mo-Khalifa96/Business-Data-Analysis-with-Python/blob/main/Business%20Data%20Analysis%20%28Jupyter%20version%29.ipynb
 <br>
 <br>
 ***Alternatively, to view the project and interact with its code, click on the following link:*** <br>
-https://somelink
+https://mybinder.org/v2/gh/Mo-Khalifa96/Business-Data-Analysis-with-Python/main?labpath=Business%20Data%20Analysis%20(Jupyter%20version).ipynb
 <br>
