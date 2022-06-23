@@ -37,9 +37,9 @@ collected and published by yelp.com, a popular website for publishing crowd-sour
 <br>
 
 ## Aim
-**The aim of this project is to demonstrate my capability for working with relatively large datasets, revealing the general trends in the data, and querying 
-them to extract key information or even a single piece of information (such as, surveying the data in order to recommend a fast food restaurant with a 4-star 
-rating or above in a nearby area).**
+**The aim of this project is to demonstrate my ability to work with Excel files and datasets, uncovering the general trends in the data and/or querying 
+the data to extract certain key information or even a single piece of information (for instance, surveying the data in order to recommend a fast food 
+restaurant with a 4-star rating or above in a nearby area).**
 <br>
 <br>
 <br>
