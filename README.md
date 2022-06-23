@@ -7,7 +7,7 @@ Pennsylvania. Further, it utilizes a variety of popular Python libraries for dat
 
 <br>
 
-**The project covers a range of core data analysis skills, including:**
+**The project covers a range of core data analysis skills, including:** <br>
 &emsp; 1) Reading and inspecting Excel files <br>
 &emsp; 2) Merging and updating data <br>
 &emsp; 3) Querying data <br>
@@ -39,15 +39,14 @@ collected and published by yelp.com, a popular website for publishing crowd-sour
 ## Aim
 **The aim of this project is to demonstrate my capability for working with relatively large datasets, revealing the general trends in the data, and querying 
 them to extract key information or even a single piece of information (such as, surveying the data in order to recommend a fast food restaurant with a 4-star 
-rating or above in a nearby area).
+rating or above in a nearby area).**
+<br>
 <br>
 <br>
 
 ## Quick Access 
 **You can quickly access the project from either of the links below. Both links will direct you to the Jupyter notebook version with all the code and corresponding 
-output rendered and ready for viewing. The notebook is divided and organized into different sections with different cells, each cell captures a block of code as input
-and its corresponding result as output. The first link enables you to view the code and resulting output but without interacting with it. The second link on the other
-hand renders the code executable, which thereby allows you to both view the project and interact with the code, in case you preferred to reproduce the results yourself. 
+output rendered and ready for viewing. The notebook is divided and organized into different sections with different cells, each cell captures a block of code as input and its corresponding result as output. The first link enables you to view the code and resulting output but without interacting with it. The second link on the other hand renders the code executable, which thereby allows you to both view the project and interact with the code, in case you preferred to reproduce the results yourself.**
 <br>
 <br>
 ***To view the project only, click on the following link:*** <br>
