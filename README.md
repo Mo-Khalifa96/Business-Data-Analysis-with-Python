@@ -24,7 +24,7 @@ The Jupyter version is also slightly modified to utilize Jupyter's user-friendly
 <br>
 <br>
 
-## Database
+## About The Data
 **The data being analyzed are contained in the file 'yelp.xlsx', which consists of data pertaining to a variety of local businesses, 
 collected and published by yelp.com, a popular website for publishing crowd-sourced reviews about businesses.** 
 <br>
