@@ -59,9 +59,7 @@ print('')
 
 #2. Updating the dataframe 
 #Deleting duplicate coloumns 
-del df['id_x']
-del df['id_y']
-
+df = df.drop(['id_x', 'id_y'],axis=1)
 
 #Renaming the coloumns, 'category_0' and 'category_1', to be more representative of their data 
 df.rename(columns={'category_0': 'business type',       #specifying the old (left) and new (right) coloumn titles
@@ -334,38 +332,42 @@ LA_filter = df['city'] == 'Las Vegas'
 LA_rating = df[LA_filter]['stars'] 
 
 
+#Setting the figure size 
+plt.figure(figsize=(10,6))
+
 #plotting histogram to show frequency distribution of different businesses ratings in Pittsburgh
-plt.hist(Pitts_rating,
-         label='Pittsburgh',
-         color='#9cd095',
-         alpha=0.8,
-         linewidth=1, edgecolor='k',
-         bins='auto')
+plt.hist(Pitts_rating,             
+         label='Pittsburgh',        #setting the label/description of the histogram
+         color='#9cd095',           #specifying the color of histogram bars
+         alpha=0.8,                #setting the degree of bars transparency
+         linewidth=1, edgecolor='k',   #setting the bar edges' width and color
+         bins='auto'                  #divides the bins along the x-axis automatically
+         )
 
 #plotting histogram to show frequency distribution of different businesses ratings in LA
 plt.hist(LA_rating, 
-        label='Las Vegas',             #setting the label/description of the histogram
-        color='#95c6d0',              #specifying the color of histogram bars
-        alpha=0.6,                   #setting the degree of bars transparency
-        linewidth=1, edgecolor='k',     #setting the bar edges' width and color
-        bins='auto'                 #divides the bins along the x-axis automatically
-        )
-
+        label='Las Vegas',
+        color='#95c6d0',
+        alpha=0.6,                   
+        linewidth=1, edgecolor='k',    
+        bins='auto')
 
 #Adding a title to the histogram 
-plt.title('Distribution of Rating Scores for Las Vegas and Pittsburgh Businesses')
+plt.title('Distribution of Rating Scores for Las Vegas and Pittsburgh Businesses', fontsize=15)
 #Adding labels to the histogram axes 
-plt.xlabel('Rating Score')       
-plt.ylabel('Frequency of Rating Score')
+plt.xlabel('Rating Score', fontsize=12)       
+plt.ylabel('Frequency of Rating Score', fontsize=12)
 #Adding a legend to describe the histogram better 
 plt.legend(title='Business location:', loc='best')      #specifies the title and location of the legend
 
 #To display the histogram 
+plt.tight_layout()
 plt.show()
 
 
 #1.2. Alternatively, comparison could be presented better using a histogram with 'non-overlapping' bars 
 #plotting a non-overlapping histogram
+plt.figure(figsize=(10,6))
 plt.hist([Pitts_rating, LA_rating], 
           label=['Pittsburgh', 'Las Vegas'],
           color=['#9cd095', '#95c6d0'],
@@ -374,14 +376,15 @@ plt.hist([Pitts_rating, LA_rating],
           bins='auto')
 
 #Adding a title 
-plt.title('Distribution of Rating Scores for Las Vegas and Pittsburgh Businesses')
+plt.title('Distribution of Rating Scores for Las Vegas and Pittsburgh Businesses', fontsize=15)
 #Adding labels to histogram axes
-plt.xlabel('Rating Score')
-plt.ylabel('Frequency of Rating Score')
+plt.xlabel('Rating Score', fontsize=12)
+plt.ylabel('Frequency of Rating Score', fontsize=12)
 #Adding a legend to describe the histogram better
 plt.legend(title='Business location:', loc='best')
 
 #To display the histogram 
+plt.tight_layout()
 plt.show()
 
 
@@ -405,6 +408,9 @@ Fashion_filter2 = df['service type'] == 'Fashion'
 df_Fashion = df[Fashion_filter1 | Fashion_filter2]
 
 #creating a scatterplot for each class of business to compare popularity to service quality for each
+#First, setting the figure size 
+plt.figure(figsize=(10,6))
+
 #plotting the data for health and medical industries
 plt.scatter(df_Health['review_count'],           #specifying the data points to plot along the x-axis
             df_Health['stars'],                 #specifying the data points to plot along the y-axis
@@ -434,14 +440,15 @@ plt.scatter(df_Fashion['review_count'],
             alpha=0.9)
 
 #Adding a title to the scatter plot 
-plt.title('The Relationship Between Popularity and Quality of Service')
+plt.title('The Relationship Between Popularity and Quality of Service', fontsize=15)
 #Adding labels to the scatterplot axes 
-plt.xlabel('Popularity (measured by reviews frequency)')
-plt.ylabel('Service Quality (measured by star rating)')
+plt.xlabel('Popularity (measured by reviews frequency)', fontsize=12)
+plt.ylabel('Service Quality (measured by star rating)', fontsize=12)
 #Adding a legend
 plt.legend(title='Business Type:', loc='best')
 
 #To display the scatterplot 
+plt.tight_layout()
 plt.show()
 
 
@@ -468,15 +475,17 @@ pivot_HealthByCity = pd.pivot_table(df_HealthByCity,
                                 aggfunc=np.mean)
 
 #Plotting a bar chart to compare the means between cities
-pivot_HealthByCity.plot(kind='bar',
-                       color='#3235b3cf',
-                       title='Average Star Rating for Health & Medical Businesses Per City',
-                       legend=False,
-                       width=0.35,           #setting the bars widths
-                       figsize=(7,6),        #width x height
-                       fontsize=8)         
+pivot_HealthByCity.plot(figsize=(9,6),       
+                        kind='bar',
+                        color='#44749d',
+                        linewidth=1,
+                        edgecolor='k',
+                        width=0.35,           
+                        legend=False,
+                        )         
 
-#labeling bar chart axes 
+#Adding title and labeling the axes 
+plt.title('Average Star Rating for Health & Medical Businesses Per City', fontsize=15)
 plt.xlabel('Cities', fontsize=12)
 plt.ylabel('Average Star Rating', fontsize=12)
 #adjusting the tick label's rotation
@@ -545,12 +554,12 @@ except:
 #'Hotels & Travel' as well as those in LA only, and append the filtered data  
 #into the two sheets I created earlier in the 'yelp_filtered.xlsx' file
 
-#filtering data for 'Hotels & Travel' 
+#Filtering data for 'Hotels & Travel' 
 Hotels_filter1 = df['business type'] == 'Hotels & Travel'
 Hotels_filter2 = df['service type'] == 'Hotels & Travel'
 df_Hotels = df[Hotels_filter1 | Hotels_filter2]
 
-#extracting those in LA 
+#Extracting those in LA 
 LA_filter = df_Hotels['city'] == 'Las Vegas'
 df_LA_Hotels = df_Hotels[LA_filter]
 
@@ -558,7 +567,6 @@ df_LA_Hotels = df_Hotels[LA_filter]
 with pd.ExcelWriter('yelp_filtered.xlsx', engine='openpyxl', mode='a', if_sheet_exists='overlay') as writer: 
     #specifying the workbook with the existing data
     writer.book = openpyxl.load_workbook('yelp_filtered.xlsx')
-    writer.sheets = dict((ws.title, ws) for ws in writer.book.worksheets)
     #appending the dataframe df_Hotels to the 'Restaurants and Bars' sheet
     df_Hotels.to_excel(writer, 
                     sheet_name='Restaurants and Bars',        #specifying the sheet to append to 
